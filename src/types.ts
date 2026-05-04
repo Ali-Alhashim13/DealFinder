@@ -14,6 +14,9 @@ export interface Store {
   logo: string;
   websiteUrl: string;
   isFeatured?: boolean;
+  ownerEmail?: string;
+  isVerified?: boolean;
+  isDisabled?: boolean;
 }
 
 export interface Category {
@@ -31,6 +34,17 @@ export interface Review {
   comment: string;
   date: string;
   status: 'pending' | 'approved' | 'rejected';
+}
+
+export interface Coupon {
+  id: string;
+  storeId: string;
+  code: string;
+  title: string;
+  description: string;
+  discount: string;
+  expiresAt: string;
+  isActive: boolean;
 }
 
 export const CATEGORIES: Category[] = [
@@ -54,6 +68,8 @@ export const STORES: Store[] = [
     logo: 'https://picsum.photos/seed/hosting/100/100',
     websiteUrl: 'https://example.com',
     isFeatured: true,
+    ownerEmail: 'store-ops@example.com',
+    isVerified: true,
   },
   {
     id: '2',
@@ -65,6 +81,8 @@ export const STORES: Store[] = [
     priceLevel: 1,
     logo: 'https://picsum.photos/seed/domains/100/100',
     websiteUrl: 'https://example.com',
+    ownerEmail: 'store-ops@example.com',
+    isVerified: true,
   },
   {
     id: '3',
@@ -77,6 +95,8 @@ export const STORES: Store[] = [
     logo: 'https://picsum.photos/seed/fashion/100/100',
     websiteUrl: 'https://example.com',
     isFeatured: true,
+    ownerEmail: 'fashion-owner@example.com',
+    isVerified: true,
   },
   {
     id: '4',
@@ -88,6 +108,8 @@ export const STORES: Store[] = [
     priceLevel: 3,
     logo: 'https://picsum.photos/seed/home/100/100',
     websiteUrl: 'https://example.com',
+    ownerEmail: 'store-ops@example.com',
+    isVerified: true,
   },
   {
     id: '5',
@@ -99,6 +121,8 @@ export const STORES: Store[] = [
     priceLevel: 2,
     logo: 'https://picsum.photos/seed/beauty/100/100',
     websiteUrl: 'https://example.com',
+    ownerEmail: 'beauty-owner@example.com',
+    isVerified: true,
   },
   {
     id: '6',
@@ -110,5 +134,78 @@ export const STORES: Store[] = [
     priceLevel: 1,
     logo: 'https://picsum.photos/seed/grocery/100/100',
     websiteUrl: 'https://example.com',
+    ownerEmail: 'store-ops@example.com',
+    isVerified: true,
   }
+];
+
+export const REVIEWS: Review[] = [
+  {
+    id: 'r1',
+    storeId: '1',
+    userName: 'John Doe',
+    rating: 4,
+    comment: 'Excellent service and fast shipping. Highly recommend this store for anyone looking for quality electronics.',
+    date: '2 days ago',
+    status: 'approved',
+  },
+  {
+    id: 'r2',
+    storeId: '1',
+    userName: 'Alice Miller',
+    rating: 4,
+    comment: 'Great selection of products, but the website could be a bit faster. Overall a good experience.',
+    date: '4 days ago',
+    status: 'approved',
+  },
+  {
+    id: 'r3',
+    storeId: '1',
+    userName: 'Robert King',
+    rating: 5,
+    comment: 'The customer support was very helpful when I had a question about my order. Will definitely shop here again.',
+    date: '1 week ago',
+    status: 'approved',
+  },
+  {
+    id: 'r4',
+    storeId: '3',
+    userName: 'Maya Stone',
+    rating: 5,
+    comment: 'Beautiful materials and accurate sizing. The packaging felt thoughtful too.',
+    date: '3 days ago',
+    status: 'approved',
+  },
+  {
+    id: 'r5',
+    storeId: '5',
+    userName: 'Sam Lee',
+    rating: 4,
+    comment: 'Gentle products and quick delivery. I would like to see more travel sizes.',
+    date: '5 days ago',
+    status: 'approved',
+  },
+];
+
+export const COUPONS: Coupon[] = [
+  {
+    id: 'c1',
+    storeId: '1',
+    code: 'CLOUD20',
+    title: '20% off annual hosting',
+    description: 'Save on the first year of any annual cloud hosting plan.',
+    discount: '20% off',
+    expiresAt: '2026-12-31',
+    isActive: true,
+  },
+  {
+    id: 'c2',
+    storeId: '3',
+    code: 'THREADS15',
+    title: 'New season discount',
+    description: 'Use this code on sustainable apparel orders above $75.',
+    discount: '15% off',
+    expiresAt: '2026-09-30',
+    isActive: true,
+  },
 ];

@@ -29,6 +29,7 @@ DealFinder is a comprehensive directory for trusted online retailers, designed t
 - **Persistent Favorites**: Save and manage favorite stores across sessions
 - **User Authentication**: Login required for favorites (mock implementation)
 - **State Persistence**: Favorites stored in localStorage
+- **Role support**: Shopper, Store, and Admin accounts with separate portals and permissions
 
 ### 👨‍💼 Admin Dashboard
 - **Store Management**: CRUD operations for store listings
@@ -62,9 +63,9 @@ DealFinder is a comprehensive directory for trusted online retailers, designed t
    npm install
    ```
 
-3. **Set up environment variables** (optional for AI features):
+3. **Set up environment variables** (optional):
    - Copy `.env.example` to `.env.local`
-   - Add your `GEMINI_API_KEY` if using AI features
+   - Add any required values such as `GEMINI_API_KEY` or `APP_URL`
 
 4. **Run the development server**:
    ```bash
